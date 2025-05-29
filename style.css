@@ -1,86 +1,363 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-  background-color: #eaf6ff;
-  color: #333;
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaf6ff;
+    color: #333;
+    margin: 0;
+    padding: 0; /* Remove body padding, handle spacing with containers */
+    display: flex;
+    flex-direction: column; /* Allow header/footer stacking */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 }
 
-/* Page structure */
-.fullscreen-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 100vh;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-/* Header */
 .quiz-header {
-  text-align: center;
-  width: 100%;
-  padding: 10px 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #0056b3; /* Example background, can be transparent */
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 #campaign-logo {
-  max-height: 70px;
-  width: auto;
+    max-height: 70px; /* Adjust as needed */
+    width: auto;
 }
 
-/* Main content box */
 .container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  max-width: 700px;
-  width: 90%;
-  text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 90%; /* Adjusted for better padding */
+    margin: 10px auto; /* Reduced margin */
 }
 
-.mascotte-accueil {
-  max-width: 120px;
-  margin-bottom: 20px;
+.quiz-active-container {
+    max-width: 850px;
 }
 
 h1 {
-  color: #0056b3;
-  font-size: 2em;
-  margin-bottom: 10px;
+    color: #0056b3;
+    margin-bottom: 15px; /* Reduced margin */
+    font-size: 2.8em; /* Adjusted size */
 }
 
-p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 1.2em;
 }
 
-/* Start button */
-#startBtn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.mascotte-accueil {
+    max-width: 120px;
+    margin-bottom: 20px;
 }
 
-#startBtn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+.language-buttons button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.language-buttons button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.cover-image {
+    max-width: 60%; /* Reduced size */
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.campaign-info {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Quiz Container - Layout */
+#question-header {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.question-area {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.question-text-container {
+    flex: 3;
+    text-align: left;
+}
+
+.question-image-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#question-image {
+    max-width: 100%;
+    max-height: 280px; /* Adjusted max height */
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    object-fit: contain;
+}
+
+#question-text {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+#options-container {
+    margin-top: 15px;
+}
+
+#options-container button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: left;
+}
+
+#options-container button:hover:not([disabled]) {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+#options-container button.correct {
+    background-color: #28a745 !important; /* Ensure override */
+    border-color: #28a745 !important;
+    color: white !important;
+}
+
+#options-container button.incorrect {
+    background-color: #dc3545 !important; /* Ensure override */
+    border-color: #dc3545 !important;
+    color: white !important;
+}
+
+#options-container button:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+/* New Feedback Section */
+#feedback-section {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('./images/feedback/trameFond.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd;
+}
+
+.feedback-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#feedback-icon {
+    max-width: 60px; /* Adjust as needed */
+    height: auto;
+}
+
+#feedback-mascotte {
+    max-width: 100px; /* Adjust as needed */
+    height: auto;
+}
+
+#feedback-text-explanation {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #333; /* Ensure text is readable on background */
+    background-color: rgba(255, 255, 255, 0.8); /* Slight white background for readability */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#feedback-qrcode {
+    max-width: 120px; /* Adjust as needed */
+    height: auto;
+}
+
+#next-question-button {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#next-question-button:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+/* Results Container */
+#results-container h2 {
+    color: #0056b3;
+}
+
+#results-container p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#result-score-image {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+#results-container button {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#results-container button:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
 }
 
 /* Footer */
 .quiz-footer {
-  width: 100%;
-  padding: 15px 0;
-  background-color: #f0f4f8;
-  text-align: center;
-  font-size: 0.85em;
-  color: #555;
-  border-top: 1px solid #ccc;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f8f9fa; /* Light background for footer */
+    text-align: center;
+    font-size: 0.85em;
+    color: #6c757d;
+    margin-top: 20px;
+    border-top: 1px solid #dee2e6;
 }
+
+/* RTL support */
+body[dir="rtl"] .question-area {
+    flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .question-text-container {
+    text-align: right;
+}
+
+body[dir="rtl"] #options-container button {
+    text-align: right;
+}
+
+body[dir="rtl"] h1,
+body[dir="rtl"] h2,
+body[dir="rtl"] p:not(#feedback-text-explanation) { /* Keep feedback explanation LTR if it contains mixed content or numbers */
+    text-align: right;
+}
+
+body[dir="rtl"] .quiz-header #campaign-logo {
+    /* Potentially mirror if logo is direction sensitive, but usually not needed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quiz-active-container {
+        max-width: 95%;
+    }
+    .question-area {
+        flex-direction: column;
+        align-items: center;
+    }
+    .question-text-container {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .question-image-container {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+    #question-image {
+        max-height: 200px;
+    }
+    body[dir="rtl"] .question-area {
+        flex-direction: column;
+    }
+    body[dir="rtl"] .question-text-container {
+        text-align: center;
+    }
+    .feedback-content {
+        flex-direction: column; /* Ensure it stacks on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+    .container {
+        padding: 15px;
+        width: 95%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.1em;
+    }
+    .language-buttons button,
+    #options-container button,
+    #next-question-button,
+    #results-container button {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+    #question-text {
+        font-size: 1.1em;
+    }
+    #feedback-text-explanation {
+        font-size: 1em;
+    }
+    #campaign-logo {
+        max-height: 50px;
+    }
+}
+
