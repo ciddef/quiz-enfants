@@ -154,13 +154,13 @@ body {
         <a href="select_lang.html" class="page1-next-button">Suivant &rarr;</a>
     </div>
 <script>
-    function ajusterHauteur() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    function setAppHeight() {
+      const app = document.getElementById('app');
+      if (!app) return;
+      app.style.height = window.innerHeight + 'px';
     }
-
-    window.addEventListener('resize', ajusterHauteur);
-    window.addEventListener('load', ajusterHauteur);
+    window.addEventListener('resize', setAppHeight);
+    window.addEventListener('load', setAppHeight);
   </script>
 </body>
 	  </div>
