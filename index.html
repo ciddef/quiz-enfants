@@ -1,168 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campagne Droits de l'Enfant - Accueil</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body.page1-style {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between; /* Pour pousser le footer en bas */
-	min-height: 100vh;
-	padding: 20px;
-	box-sizing: border-box;
-        }
-        .page1-main-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            max-width: 900px; /* Limite la largeur */
-        }
-        .page1-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .foundation-logo-placeholder {
-	font-size: 0.9em;
-	border: 1px solid #ccc;
-	padding: 10px;
-	text-align: center;
-	border-radius: 5px;
-	max-width: 150px;
-        }
-        .page1-titles h1 {
-	color: #003366; /* Bleu foncé */
-	margin: 2px 0;
-	text-align: center;
-        }
-        .page1-content {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Centre le contenu horizontalement */
-            gap: 30px;
-            width: 100%;
-            flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
-        }
-        .page1-quiz-logo img {
-            max-width: 250px; /* Ajusté */
-            height: auto;
-        }
-        .page1-mascotte img {
-            max-width: 200px; /* Ajusté */
-            height: auto;
-        }
-        .page1-slogans {
-            text-align: center; /* Centre les slogans */
-            max-width: 300px;
-        }
-        .page1-slogans p {
-            font-size: 1em; /* Ajusté */
-            color: #0056b3;
-            margin: 8px 0;
-            font-weight: bold;
-        }
-        .page1-footer {
-            text-align: center;
-            margin-top: 30px; /* Espace avant le footer */
-            width: 100%;
-        }
-        .page1-hashtags {
-            font-size: 0.9em;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .page1-next-button {
-            background-color: #28a745; /* Vert */
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.2em;
-            border-radius: 25px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .page1-next-button:hover {
-            background-color: #218838;
-        }
-        /* Responsive pour page1 */
-        @media (max-width: 768px) {
-            .page1-header {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-            .page1-content {
-                flex-direction: column;
-            }
-            .page1-titles h1 { font-size: 1.3em; }
-            .page1-slogans p { font-size: 0.9em; }
-            .page1-quiz-logo img { max-width: 200px; }
-            .page1-mascotte img { max-width: 150px; }
-        }
-    body,td,th {
-	font-family: Arial, sans-serif;
-}
-body {
-	background-image: url(./images/feedback/trameFond.jpg);
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-    .titles-arabic {
-	font-size: 24px;
-}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz - Accueil</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #eaf6ff, #ffffff);
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .fullscreen-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      width: 100%;
+      background-color: #ffffffcc;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #0056b3;
+      margin-bottom: 1rem;
+    }
+
+    .mascotte-accueil {
+      max-width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .language-buttons button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .language-buttons button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    .cover-image {
+      max-width: 60%;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .campaign-info {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      color: #555;
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 15px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .language-buttons button {
+        width: 100%;
+        font-size: 1em;
+      }
+
+      .cover-image {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
-	  <div class="fullscreen-container">
-<body class="page1-style">
-    <div class="page1-main-container">
-        <div class="page1-header">
-            <div class="foundation-logo-placeholder"><img src="images/campaign/ciddef_campagne.png" width="159" height="147">
-          </div>
-            <div class="page1-titles">
-                <h1 class="titles-arabic">حملة التوعية بحقوق الطفل</h1>
-                <h1>Children's Rights Awareness Campaign</h1>
-                <h1>Campagne de sensibilisation aux droits de l’Enfant</h1>
-            </div>
-        </div>
-
-        <div class="page1-content">
-            <div class="page1-quiz-logo"><img src="images/campaign_logos/quizz_trilingue.png" alt="Logo Quiz Droits de l'Enfant">
-            </div>
-            <div class="page1-mascotte">
-                <img src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte Fennec OneTwoThree">
-            </div>
-            <div class="page1-slogans">
-                <p>حقوق الطفل هي حقوق الإنسان،
-ليست اختيارية</p>
-                <p>Children’s right are human right, they are not optional</p>
-                <p>Les droits de l'enfant sont des droits humains, ils ne sont pas optionnels</p>
-            </div>
-        </div>
+<body>
+  <main>
+    <div class="fullscreen-container">
+      <img src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte" class="mascotte-accueil" />
+      <h1>Bienvenue sur le Quiz des Droits de l’Enfant</h1>
+      <div class="language-buttons">
+        <button onclick="window.location.href='quizz_page.html?lang=fr'">Français</button>
+        <button onclick="window.location.href='quizz_page.html?lang=ar'">العربية</button>
+        <button onclick="window.location.href='quizz_page.html?lang=tz'">Tamazight</button>
+      </div>
+      <img src="./images/campaign/cover_quizz.jpg" alt="Couverture Quiz" class="cover-image" />
+      <p class="campaign-info">Une initiative de sensibilisation aux droits de l’enfant en Algérie.</p>
     </div>
+  </main>
 
-    <div class="page1-footer">
-        <p class="page1-hashtags">#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
-        <a href="select_lang.html" class="page1-next-button">Suivant &rarr;</a>
-    </div>
-<script>
-  function setVhProperty() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  }
-  window.addEventListener('resize', setVhProperty);
-  window.addEventListener('load', setVhProperty);
-</script>
-
+  <footer>
+    <p>#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
+  </footer>
 </body>
-	  </div>
 </html>
-
