@@ -12,16 +12,20 @@
       height: 100%;
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom right, #eaf6ff, #ffffff);
-      display: flex;
-      flex-direction: column;
     }
 
-    main {
-      flex-grow: 1;
+    body {
       display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       padding: 1rem;
     }
 
@@ -75,6 +79,7 @@
       font-size: 0.9em;
       color: #555;
       margin-top: 1rem;
+      text-align: center;
     }
 
     footer {
@@ -103,7 +108,7 @@
   </style>
 </head>
 <body>
-  <main>
+  <div class="page-wrapper">
     <div class="fullscreen-container">
       <img src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte" class="mascotte-accueil" />
       <h1>Bienvenue sur le Quiz des Droits de l’Enfant</h1>
@@ -115,7 +120,7 @@
       <img src="./images/campaign/cover_quizz.jpg" alt="Couverture Quiz" class="cover-image" />
       <p class="campaign-info">Une initiative de sensibilisation aux droits de l’enfant en Algérie.</p>
     </div>
-  </main>
+  </div>
 
   <footer>
     <p>#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
