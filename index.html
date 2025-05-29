@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienvenue - Quiz Droits de l'Enfant</title>
+  <title>Quiz Droits de l'Enfant</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="fullscreen-container">
     <header class="quiz-header">
-      <img src="./images/campaign_logos/quizz_trilingue.png" alt="Logo Quiz" id="campaign-logo" />
+      <img src="./images/campaign_logos/quizz_trilingue.png" alt="Logo Quiz Droits de l'Enfant" id="campaign-logo" />
     </header>
 
     <main class="container">
       <img src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte Accueil" class="mascotte-accueil" />
       <h1>Bienvenue au Quiz</h1>
-      <h2>Choisissez votre langue</h2>
-
-      <div class="language-buttons">
-        <button onclick="location.href='quizz_page.html?lang=fr'">Français</button>
-        <button onclick="location.href='quizz_page.html?lang=ar'" dir="rtl">العربية</button>
-      </div>
+      <p>Appuyez sur le bouton pour commencer</p>
+      <button id="startBtn" onclick="location.href='select_lang.html'">Commencer</button>
     </main>
 
     <footer class="quiz-footer">
