@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campagne Droits de l'Enfant - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body.page1-style {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between; /* Pour pousser le footer en bas */
+	min-height: 100vh;
+	padding: 20px;
+	box-sizing: border-box;
+        }
+        .page1-main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px; /* Limite la largeur */
+        }
+        .page1-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .foundation-logo-placeholder {
+	font-size: 0.9em;
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	max-width: 150px;
+        }
+        .page1-titles h1 {
+	color: #003366; /* Bleu foncé */
+	margin: 2px 0;
+	text-align: center;
+        }
+        .page1-content {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centre le contenu horizontalement */
+            gap: 30px;
+            width: 100%;
+            flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+        }
+        .page1-quiz-logo img {
+            max-width: 250px; /* Ajusté */
+            height: auto;
+        }
+        .page1-mascotte img {
+            max-width: 200px; /* Ajusté */
+            height: auto;
+        }
+        .page1-slogans {
+            text-align: center; /* Centre les slogans */
+            max-width: 300px;
+        }
+        .page1-slogans p {
+            font-size: 1em; /* Ajusté */
+            color: #0056b3;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        .page1-footer {
+            text-align: center;
+            margin-top: 30px; /* Espace avant le footer */
+            width: 100%;
+        }
+        .page1-hashtags {
+            font-size: 0.9em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .page1-next-button {
+            background-color: #28a745; /* Vert */
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .page1-next-button:hover {
+            background-color: #218838;
+        }
+        /* Responsive pour page1 */
+        @media (max-width: 768px) {
+            .page1-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .page1-content {
+                flex-direction: column;
+            }
+            .page1-titles h1 { font-size: 1.3em; }
+            .page1-slogans p { font-size: 0.9em; }
+            .page1-quiz-logo img { max-width: 200px; }
+            .page1-mascotte img { max-width: 150px; }
+        }
+    body,td,th {
+	font-family: Arial, sans-serif;
+}
+body {
+	background-image: url(./images/feedback/trameFond.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+    .titles-arabic {
+	font-size: 24px;
+}
+    </style>
+</head>
+<body class="page1-style">
+    <div class="page1-main-container">
+        <div class="page1-header">
+            <div class="foundation-logo-placeholder"><img src="images/campaign/ciddef_campagne.png" width="159" height="147">
+          </div>
+            <div class="page1-titles">
+                <h1 class="titles-arabic">حملة التوعية بحقوق الطفل</h1>
+                <h1>Children's Rights Awareness Campaign</h1>
+                <h1>Campagne de sensibilisation aux droits de l’Enfant</h1>
+            </div>
+        </div>
+
+        <div class="page1-content">
+            <div class="page1-quiz-logo"><img src="images/campaign_logos/quizz_trilingue.png" alt="Logo Quiz Droits de l'Enfant">
+            </div>
+            <div class="page1-mascotte">
+                <img src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte Fennec OneTwoThree">
+            </div>
+            <div class="page1-slogans">
+                <p>حقوق الطفل هي حقوق الإنسان،
+ليست اختيارية</p>
+                <p>Children’s right are human right, they are not optional</p>
+                <p>Les droits de l'enfant sont des droits humains, ils ne sont pas optionnels</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page1-footer">
+        <p class="page1-hashtags">#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
+        <a href="select_lang.html" class="page1-next-button">Suivant &rarr;</a>
+    </div>
+
+</body>
+</html>
+

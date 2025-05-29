@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Droits de l'Enfant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="quiz-header">
+        <img src="./images/campaign_logos/quizz_trilingue.png" alt="Logo Quiz Droits de l'Enfant" id="campaign-logo">
+    </header>
+
+    <!-- Quiz Container -->
+    <div class="container quiz-active-container" id="quiz-container" style="display: none;">
+        <div id="question-header">
+            <span id="question-number"></span>
+        </div>
+        <div class="question-area">
+            <div class="question-text-container">
+                 <p id="question-text"></p>
+            </div>
+            <div class="question-image-container">
+                <img id="question-image" src="" alt="Illustration Question">
+            </div>
+        </div>
+        <div id="options-container">
+            <!-- Options buttons will be loaded here by JavaScript -->
+        </div>
+        
+        <!-- New Feedback Section (replaces modal) -->
+        <div id="feedback-section" style="display: none;">
+            <div class="feedback-content">
+                <img id="feedback-icon" src="" alt="Icône Résultat">
+                <img id="feedback-mascotte" src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte Feedback">
+                <p id="feedback-text-explanation"></p>
+                <img id="feedback-qrcode" src="./images/feedback/taplink.svg" alt="QR Code Taplink">
+            </div>
+            <button id="next-question-button">Question suivante</button>
+        </div>
+    </div>
+
+    <!-- Results Container -->
+    <div class="container" id="results-container" style="display: none;">
+        <h2>Résultats du Quiz</h2>
+        <img id="result-score-image" src="" alt="Image Score Résultat" style="display:none; max-width: 150px; margin-bottom: 15px;">
+        <p>Votre score : <span id="score"></span> / <span id="total-questions-in-session"></span></p>
+        <p id="result-message"></p>
+        <button onclick="restartQuiz()">Rejouer</button>
+        <button onclick="changeLanguage()">Changer de langue</button>
+    </div>
+
+    <footer class="quiz-footer">
+        <p>#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
+    </footer>
+
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
