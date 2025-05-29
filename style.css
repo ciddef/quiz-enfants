@@ -1,125 +1,112 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil Quiz Droits de l’Enfant</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+/* Général */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; /* Fond sobre bleu-gris clair */
+  color: #333;
+}
 
-    body {
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(to bottom right, #eaf6ff, #ffffff);
-      font-family: Arial, sans-serif;
-      color: #333;
-    }
+/* Conteneur principal qui couvre tout l'écran */
+.fullscreen-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
-    .content-wrapper {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
+/* En-tête */
+.quiz-header {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
 
-    .fullscreen-container {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      max-width: 700px;
-      width: 100%;
-    }
+#campaign-logo {
+  max-height: 70px;
+  width: auto;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      color: #0056b3;
-      margin-bottom: 1rem;
-    }
+/* Contenu principal */
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
 
-    .mascotte-accueil {
-      max-width: 120px;
-      margin-bottom: 1rem;
-    }
+/* Mascotte */
+.mascotte-accueil {
+  max-width: 120px;
+  margin-bottom: 20px;
+}
 
-    .language-buttons button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      margin: 8px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 1.1em;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+/* Titres */
+h1 {
+  color: #0056b3;
+  margin-bottom: 15px;
+  font-size: 2em;
+}
 
-    .language-buttons button:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-    }
+h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
 
-    .cover-image {
-      max-width: 70%;
-      border-radius: 10px;
-      margin-top: 1.5rem;
-    }
+/* Boutons langue */
+.language-buttons button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin: 8px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-    .campaign-info {
-      margin-top: 1rem;
-      font-size: 0.9em;
-      color: #555;
-    }
+.language-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
 
-    footer {
-      background-color: #f8f9fa;
-      color: #6c757d;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.85rem;
-      border-top: 1px solid #dee2e6;
-    }
+/* Pied de page */
+.quiz-footer {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #e0e6ec;
+  text-align: center;
+  font-size: 0.85em;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .cover-image {
-        max-width: 100%;
-      }
-
-      .language-buttons button {
-        width: 100%;
-        font-size: 1em;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="content-wrapper">
-    <div class="fullscreen-container">
-      <img src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte" class="mascotte-accueil" />
-      <h1>Bienvenue sur le Quiz des Droits de l’Enfant</h1>
-      <div class="language-buttons">
-        <button onclick="window.location.href='quizz_page.html?lang=fr'">Français</button>
-        <button onclick="window.location.href='quizz_page.html?lang=ar'">العربية</button>
-        <button onclick="window.location.href='quizz_page.html?lang=tz'">Tamazight</button>
-      </div>
-      <img src="./images/campaign/cover_quizz.jpg" alt="Image couverture" class="cover-image" />
-      <p class="campaign-info">Une initiative de sensibilisation aux droits de l’enfant en Algérie.</p>
-    </div>
-  </div>
-
-  <footer>
-    <p>#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
-  </footer>
-</body>
-</html>
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    width: 95%;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.1em;
+  }
+  .language-buttons button {
+    padding: 10px 15px;
+    font-size: 0.95em;
+  }
+  #campaign-logo {
+    max-height: 50px;
+  }
+}
