@@ -1,60 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Droits de l'Enfant</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Droits de l'Enfant</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(to bottom, #eaf6ff 0%, #ffffff 100%);
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      justify-content: space-between;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quiz-footer {
+      background-color: #f8f9fa;
+      color: #555;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+    }
+
+    #quiz-container,
+    #results-container {
+      margin: 20px;
+      width: 100%;
+      max-width: 850px;
+    }
+  </style>
 </head>
 <body>
-    <header class="quiz-header">
-        <img src="./images/campaign_logos/quizz_trilingue.png" alt="Logo Quiz Droits de l'Enfant" id="campaign-logo">
-    </header>
+  <header class="quiz-header">
+    <img src="./images/campaign_logos/quizz_trilingue.png" alt="Logo Quiz Droits de l'Enfant" id="campaign-logo">
+  </header>
 
+  <main>
     <!-- Quiz Container -->
     <div class="container quiz-active-container" id="quiz-container" style="display: none;">
-        <div id="question-header">
-            <span id="question-number"></span>
+      <div id="question-header"><span id="question-number"></span></div>
+      <div class="question-area">
+        <div class="question-text-container">
+          <p id="question-text"></p>
         </div>
-        <div class="question-area">
-            <div class="question-text-container">
-                 <p id="question-text"></p>
-            </div>
-            <div class="question-image-container">
-                <img id="question-image" src="" alt="Illustration Question">
-            </div>
+        <div class="question-image-container">
+          <img id="question-image" src="" alt="Illustration Question">
         </div>
-        <div id="options-container">
-            <!-- Options buttons will be loaded here by JavaScript -->
+      </div>
+      <div id="options-container"></div>
+
+      <!-- Feedback Section -->
+      <div id="feedback-section" style="display: none;">
+        <div class="feedback-content">
+          <img id="feedback-icon" src="" alt="Icône Résultat">
+          <img id="feedback-mascotte" src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte Feedback">
+          <p id="feedback-text-explanation"></p>
         </div>
-        
-        <!-- New Feedback Section (replaces modal) -->
-        <div id="feedback-section" style="display: none;">
-            <div class="feedback-content">
-                <img id="feedback-icon" src="" alt="Icône Résultat">
-                <img id="feedback-mascotte" src="./images/campaign/mascotte_onetwothree.png" alt="Mascotte Feedback">
-                <p id="feedback-text-explanation"></p>
-            </div>
-            <button id="next-question-button">Question suivante</button>
-        </div>
+        <button id="next-question-button">Question suivante</button>
+      </div>
     </div>
 
     <!-- Results Container -->
     <div class="container" id="results-container" style="display: none;">
-        <h2>Résultats du Quiz</h2>
-        <img id="result-score-image" src="" alt="Image Score Résultat" style="display:none; max-width: 150px; margin-bottom: 15px;">
-        <p>Votre score : <span id="score"></span> / <span id="total-questions-in-session"></span></p>
-        <p id="result-message"></p>
-        <button onclick="restartQuiz()">Rejouer</button>
-        <button onclick="changeLanguage()">Changer de langue</button>
+      <h2>Résultats du Quiz</h2>
+      <img id="result-score-image" src="" alt="Image Score Résultat" style="display:none;">
+      <p>Votre score : <span id="score"></span> / <span id="total-questions-in-session"></span></p>
+      <p id="result-message"></p>
+      <button onclick="restartQuiz()">Rejouer</button>
+      <button onclick="changeLanguage()">Changer de langue</button>
     </div>
+  </main>
 
-    <footer class="quiz-footer">
-        <p>#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
-    </footer>
+  <footer class="quiz-footer">
+    <p>#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
+  </footer>
 
-    <script src="quiz-data.js"></script>
-    <script src="script.js"></script>
+  <script src="quiz-data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
