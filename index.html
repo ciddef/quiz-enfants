@@ -121,6 +121,7 @@ body {
 }
     </style>
 </head>
+	  <div class="fullscreen-container">
 <body class="page1-style">
     <div class="page1-main-container">
         <div class="page1-header">
@@ -152,7 +153,16 @@ body {
         <p class="page1-hashtags">#DroitsEnfantAlgerie #Ciddef #ProtectionEnfant #حقوق_الطفل</p>
         <a href="select_lang.html" class="page1-next-button">Suivant &rarr;</a>
     </div>
+<script>
+    function ajusterHauteur() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
 
+    window.addEventListener('resize', ajusterHauteur);
+    window.addEventListener('load', ajusterHauteur);
+  </script>
 </body>
+	  </div>
 </html>
 
