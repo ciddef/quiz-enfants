@@ -1,4 +1,21 @@
 /* General Styles */
+.fullscreen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(var(--vh, 1vh) * 100);
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+button#startBtn {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #eaf6ff;
